@@ -25,10 +25,9 @@
 
 
 
-## 📂
-[[500-REPOSITORIOS/Develop/Develop\|Develop]]
-[[500-REPOSITORIOS/Nuevo ejemplo/Nuevo ejemplo\|Nuevo ejemplo]]
-
-
 ## 📝
-[[esta es una|
+[[500-REPOSITORIOS/Servidor\|Servidor]]
+[[500-REPOSITORIOS/Clase\|Clase]]
+
+## 📂
+[[500-REPOSITORIOS/carpeta01/carpeta01\|carpeta01]]
