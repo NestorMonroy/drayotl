@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/test/"}
+{"dg-publish":true,"permalink":"/500-repositorios/test/","tags":["gardenEntry"]}
 ---
 
 
