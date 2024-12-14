@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/carpeta01/carpeta01/"}
+{"UID":20241213183221477000,"aliases":"carpeta01","type":"moc","dg-publish":true,"cssclass":["justify","noscroll","wide-page"],"permalink":"/500-repositorios/carpeta01/carpeta01/","dgPassFrontmatter":true}
 ---
 
 

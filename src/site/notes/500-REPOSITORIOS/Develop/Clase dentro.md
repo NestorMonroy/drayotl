@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/develop/clase-dentro/"}
+{"UID":20241213182514995000,"aliases":"clase dentro","type":"nota","date":"2024-12-13","dg-publish":true,"cssclass":["justify","noscroll","wide-page"],"permalink":"/500-repositorios/develop/clase-dentro/","dgPassFrontmatter":true}
 ---
 
 

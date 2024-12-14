@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/nuevo-ejemplo/test/"}
+{"UID":20241213182830473000,"aliases":"test","type":"nota","date":"2024-12-13","dg-publish":true,"cssclass":["justify","noscroll","wide-page"],"permalink":"/500-repositorios/nuevo-ejemplo/test/","dgPassFrontmatter":true}
 ---
 
 

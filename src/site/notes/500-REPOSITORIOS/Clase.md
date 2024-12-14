@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/clase/"}
+{"UID":20241213183132220000,"aliases":"clase","type":"nota","date":"2024-12-13","dg-publish":true,"cssclass":["justify","noscroll","wide-page"],"permalink":"/500-repositorios/clase/","dgPassFrontmatter":true}
 ---
 
 

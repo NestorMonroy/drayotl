@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/servidor/"}
+{"UID":20241213183123890000,"aliases":"servidor","type":"nota","date":"2024-12-13","dg-publish":true,"cssclass":["justify","noscroll","wide-page"],"permalink":"/500-repositorios/servidor/","dgPassFrontmatter":true}
 ---
 
 
