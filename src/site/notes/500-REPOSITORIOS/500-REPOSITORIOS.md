@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/500-repositorios/500-repositorios/","tags":["gardenEntry"]}
+{"cssclasses":["gridlist","noyaml"],"type":"moc","obsidianUIMode":"preview","dg-home":true,"dg-publish":true,"permalink":"/500-repositorios/500-repositorios/","tags":["gardenEntry"],"dgPassFrontmatter":true}
 ---
 
 `button-home-principal` 
