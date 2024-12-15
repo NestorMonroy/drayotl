@@ -559,6 +559,10 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  // Agregar watch targets específicos
+  eleventyConfig.addWatchTarget("./src/site/styles/**/*.scss");
+  eleventyConfig.addWatchTarget("./dist/styles/**/*.css");
+
   userEleventySetup(eleventyConfig);
 
   return {
@@ -571,5 +575,28 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: false,
     passthroughFileCopy: true,
+    browserSyncConfig: {
+      server: "./dist",
+      watch: true,
+      files: [
+        "./dist/**/*.html",
+        "./dist/styles/**/*.css",
+        "./src/site/styles/**/*.scss"
+      ],
+      ignored: "node_modules/**",
+      open: false,
+      notify: false,
+      ghostMode: false,
+      ui: false,
+      port: 8080,
+      snippetOptions: {
+        rule: {
+          match: /<\/head>/i,
+          fn: function (snippet, match) {
+            return snippet + match;
+          }
+        }
+      }
+    }
   };
 };

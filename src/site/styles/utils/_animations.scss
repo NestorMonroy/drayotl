@@ -1,0 +1,118 @@
+// Basic transitions
+$transition-fast: 0.1s ease-in-out;
+$transition-base: 0.2s ease-in-out;
+$transition-slow: 0.3s ease-in-out;
+
+// Fade animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Slide animations
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+// Scale animations
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Animation utility classes
+.fade-in {
+  animation: fadeIn $transition-base forwards;
+}
+
+.fade-out {
+  animation: fadeOut $transition-base forwards;
+}
+
+.slide-in {
+  animation: slideIn $transition-base forwards;
+}
+
+.slide-out {
+  animation: slideOut $transition-base forwards;
+}
+
+.scale-in {
+  animation: scaleIn $transition-base forwards;
+}
+
+// Transition utilities
+.transition-all {
+  transition: all $transition-base;
+}
+
+.transition-transform {
+  transition: transform $transition-base;
+}
+
+.transition-opacity {
+  transition: opacity $transition-base;
+}
+
+// Hover effect utilities
+.hover-scale {
+  &:hover {
+    transform: scale(1.05);
+    transition: transform $transition-fast;
+  }
+}
+
+.hover-lift {
+  &:hover {
+    transform: translateY(-2px);
+    transition: transform $transition-fast;
+  }
+}
+
+// Loading spinner animation
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}

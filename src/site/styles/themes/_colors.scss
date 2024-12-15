@@ -1,0 +1,110 @@
+// =============================================================================
+// Theme Definitions
+// =============================================================================
+
+$themes: (
+        light: (
+                background: (
+                        primary: #ffffff,
+                        secondary: #f7f7f7,
+                        secondary-alt: #e3e3e3
+                ),
+                text: (
+                        normal: #2a2a2a,
+                        muted: #666666,
+                        accent: #4a7bdb,
+                        accent-hover: #3867c7,
+                        selection: rgba(74, 123, 219, 0.1),
+                        nav-selected: #2a2a2a,
+                        secondary: #666666
+                ),
+                heading: (
+                        h6: #2a2a2a
+                ),
+                border: #e3e3e3,
+                graph: (
+                        main: #4a7bdb,
+                        muted: #666666
+                )
+        ),
+        dark: (
+                background: (
+                        primary: #1a1a1a,
+                        secondary: #252525,
+                        secondary-alt: #2d2d2d
+                ),
+                text: (
+                        normal: #dcddde,
+                        muted: #999999,
+                        accent: #7ba1e4,
+                        accent-hover: #8fb0eb,
+                        selection: rgba(123, 161, 228, 0.2),
+                        nav-selected: #ffffff,
+                        secondary: #999999
+                ),
+                heading: (
+                        h6: #dcddde
+                ),
+                border: #333333,
+                graph: (
+                        main: #7ba1e4,
+                        muted: #999999
+                )
+        )
+);
+
+// =============================================================================
+// Theme Functions
+// =============================================================================
+
+@function theme-value($theme, $group, $property) {
+  @return map-get(map-get(map-get($themes, $theme), $group), $property);
+}
+
+// =============================================================================
+// Theme Mixins
+// =============================================================================
+
+@mixin generate-theme($theme) {
+  @if $theme == 'light' {
+    :root {
+      @content;
+    }
+  } @else {
+    [data-theme="#{$theme}"] {
+      @content;
+    }
+  }
+}
+
+// =============================================================================
+// Theme Generation
+// =============================================================================
+
+@each $theme, $map in $themes {
+  @include generate-theme($theme) {
+    // Background
+    --background-primary: #{map-get(map-get($map, background), primary)};
+    --background-secondary: #{map-get(map-get($map, background), secondary)};
+    --background-secondary-alt: #{map-get(map-get($map, background), secondary-alt)};
+
+    // Text
+    --text-normal: #{map-get(map-get($map, text), normal)};
+    --text-muted: #{map-get(map-get($map, text), muted)};
+    --text-accent: #{map-get(map-get($map, text), accent)};
+    --text-accent-hover: #{map-get(map-get($map, text), accent-hover)};
+    --text-selection: #{map-get(map-get($map, text), selection)};
+    --text-nav-selected: #{map-get(map-get($map, text), nav-selected)};
+    --text-secondary: #{map-get(map-get($map, text), secondary)};
+
+    // Headings
+    --h6-color: #{map-get(map-get($map, heading), h6)};
+
+    // Border
+    --border-color: #{map-get($map, border)};
+
+    // Graph
+    --graph-main: #{map-get(map-get($map, graph), main)};
+    --graph-muted: #{map-get(map-get($map, graph), muted)};
+  }
+}

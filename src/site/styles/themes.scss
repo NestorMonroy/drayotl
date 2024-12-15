@@ -1,0 +1,94 @@
+// Theme System Configuration
+$enable-transitions: true !default;
+$theme-transition-duration: 0.3s !default;
+$theme-transition-timing: ease !default;
+
+// Theme System Mixins
+@mixin theme-transition {
+  @if $enable-transitions {
+    transition: background-color $theme-transition-duration $theme-transition-timing,
+    color $theme-transition-duration $theme-transition-timing,
+    border-color $theme-transition-duration $theme-transition-timing,
+    box-shadow $theme-transition-duration $theme-transition-timing;
+  }
+}
+
+@mixin theme-aware($property, $theme-key, $opacity: 1) {
+  #{$property}: var(--#{$theme-key});
+
+  @if $opacity != 1 {
+    #{$property}: rgba(var(--#{$theme-key}-rgb), $opacity);
+  }
+}
+
+// Color Manipulation Functions
+@function theme-color-adjust($color, $method, $value) {
+  @if $method == 'lighten' {
+    @return lighten($color, $value);
+  } @else if $method == 'darken' {
+    @return darken($color, $value);
+  } @else if $method == 'alpha' {
+    @return rgba($color, $value);
+  }
+  @return $color;
+}
+
+// Theme Toggle Functionality
+body {
+  @include theme-transition;
+}
+
+// Theme Detection Utilities
+@mixin prefers-theme($theme) {
+  @media (prefers-color-scheme: #{$theme}) {
+    @content;
+  }
+}
+
+// Theme Context Mixins
+@mixin in-theme($theme) {
+  [data-theme="#{$theme}"] & {
+    @content;
+  }
+}
+
+// Theme Component Mixins
+@mixin themed-component($component) {
+  .#{$component} {
+    @include theme-transition;
+    @content;
+  }
+}
+
+// Theme Variants
+@mixin theme-variant($property, $light-value, $dark-value) {
+  #{$property}: $light-value;
+
+  [data-theme="dark"] & {
+    #{$property}: $dark-value;
+  }
+}
+
+// Theme Specific Styles
+@mixin theme-specific($theme) {
+  @if $theme == "light" {
+    :root:not([data-theme="dark"]) {
+      @content;
+    }
+  } @else if $theme == "dark" {
+    [data-theme="dark"] {
+      @content;
+    }
+  }
+}
+
+// Custom Property Generator
+@mixin generate-custom-properties($properties, $prefix: '') {
+  @each $property, $value in $properties {
+    @if type-of($value) == 'map' {
+      @include generate-custom-properties($value, '#{$prefix}#{$property}-');
+    } @else {
+      --#{$prefix}#{$property}: #{$value};
+    }
+  }
+}

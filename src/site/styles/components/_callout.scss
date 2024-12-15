@@ -1,0 +1,132 @@
+// Base callout structure
+.callout {
+  font-family: var(--font-default);
+  word-wrap: break-word;
+  display: block;
+  font-size: 1rem;
+}
+
+// Callout title styling
+.callout-title {
+  margin-top: 0;
+  align-items: center;
+
+  &-inner {
+    margin: 0;
+    padding: 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+// Callout icon
+.callout-icon {
+  margin: 0;
+  padding: 0;
+}
+
+// Callout fold functionality
+.callout-fold {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  .lucide {
+    transition: transform 100ms ease-in-out;
+  }
+}
+
+// Callout content
+.callout-content {
+  margin: 0;
+  padding: 0;
+}
+
+// Collapsed state
+.callout.is-collapsed {
+  .callout-content {
+    display: none;
+  }
+
+  .callout-fold .lucide {
+    transform: rotate(-90deg);
+  }
+}
+
+// Default callout types
+.callout {
+  &.note {
+    background-color: rgba(var(--text-accent), 0.1);
+    border-left: 4px solid var(--text-accent);
+  }
+
+  &.warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+  }
+
+  &.info {
+    background-color: rgba(23, 162, 184, 0.1);
+    border-left: 4px solid #17a2b8;
+  }
+
+  &.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid #28a745;
+  }
+
+  &.danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+  }
+}
+
+// Callout layout
+.callout {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 4px;
+
+  .callout-title {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 0.5em;
+  }
+
+  .callout-content {
+    padding-top: 0.5em;
+  }
+}
+
+// Interactive states
+.callout {
+  .callout-fold:hover {
+    opacity: 0.8;
+  }
+
+  &:hover {
+    .callout-fold {
+      opacity: 1;
+    }
+  }
+}
+
+// Nested callouts
+.callout .callout {
+  margin: 0.5em 0;
+}
+
+// Mobile adjustments
+@include mobile {
+  .callout {
+    margin: 0.5em 0;
+    padding: 0.75em;
+
+    .callout-title {
+      gap: 4px;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+// Base text styles
+body {
+  font-family: $font-default;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: var(--text-normal);
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2em;
+
+  @include mobile {
+    font-size: 1.8em;
+  }
+}
+
+h2 {
+  font-size: 1.75em;
+
+  @include mobile {
+    font-size: 1.6em;
+  }
+}
+
+h3 {
+  font-size: 1.5em;
+
+  @include mobile {
+    font-size: 1.4em;
+  }
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+  color: var(--h6-color);
+}
+
+// Paragraphs and spacing
+p {
+  margin-bottom: 1rem;
+}
+
+// Links
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--text-accent-hover);
+    text-decoration: underline;
+  }
+}
+
+// Code
+code, pre {
+  font-family: $font-monospace;
+  font-size: 0.9em;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+}
+
+code {
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+// Blockquotes
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--text-muted);
+  color: var(--text-muted);
+}
+
+// Small text
+small {
+  font-size: 0.85em;
+}
+
+// Selection
+::selection {
+  background-color: var(--text-selection);
+}

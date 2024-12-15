@@ -1,0 +1,129 @@
+// Grid Container
+.grid {
+  display: grid;
+  gap: $base-spacing;
+}
+
+// Basic grid layouts
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Auto-fit grid
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+// Grid gaps
+.gap-0 {
+  gap: 0;
+}
+
+.gap-sm {
+  gap: $base-spacing * 0.5;
+}
+
+.gap-md {
+  gap: $base-spacing;
+}
+
+.gap-lg {
+  gap: $base-spacing * 2;
+}
+
+// Grid alignment
+.grid-center {
+  place-items: center;
+}
+
+.grid-stretch {
+  place-items: stretch;
+}
+
+// Column spans
+.col-span-2 {
+  grid-column: span 2;
+
+  @include mobile {
+    grid-column: span 1;
+  }
+}
+
+.col-span-3 {
+  grid-column: span 3;
+
+  @include mobile {
+    grid-column: span 1;
+  }
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+// Row spans
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3;
+}
+
+// Layout specific grids
+.main-layout {
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+  gap: $base-spacing;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Grid areas
+.grid-areas {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+
+  @include mobile {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}
+
+// Area classes
+.area-header { grid-area: header; }
+.area-sidebar { grid-area: sidebar; }
+.area-main { grid-area: main; }
+.area-footer { grid-area: footer; }
