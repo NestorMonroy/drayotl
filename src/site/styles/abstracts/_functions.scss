@@ -1,0 +1,56 @@
+// Convert pixels to rem
+@function rem($pixels) {
+  @return ($pixels / 16) + rem;
+}
+
+// Convert pixels to em
+@function em($pixels) {
+  @return ($pixels / 16) + em;
+}
+
+// Lighten color with opacity
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Darken color with opacity
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Z-index management
+@function z($layer) {
+  @if map-has-key($z-layers, $layer) {
+    @return map-get($z-layers, $layer);
+  }
+  @warn 'No layer found for `#{$layer}` in $z-layers map.';
+  @return null;
+}
+
+// Strip unit from number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Check if color is light
+@function is-light($color) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  $luminance: (0.2126 * $red + 0.7152 * $green + 0.0722 * $blue) / 255;
+
+  @return $luminance > 0.5;
+}
+
+// Get contrasting color
+@function get-contrast($color) {
+  @if is-light($color) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}

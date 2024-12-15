@@ -1,0 +1,138 @@
+// Table wrapper for horizontal scrolling
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+// Base table styles
+.table-view-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  > thead > tr,
+  > tbody > tr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+  }
+
+  > tbody > tr:hover {
+    background-color: var(--text-selection) !important;
+  }
+
+  > thead > tr > th {
+    font-weight: 700;
+    font-size: larger;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  > tbody > tr > td {
+    text-align: left;
+    border: none;
+    font-weight: 400;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  ul, ol {
+    margin-block-start: 0.2em !important;
+    margin-block-end: 0.2em !important;
+  }
+}
+
+// List view table styles
+.dataview-result-list-root-ul {
+  padding: 0em !important;
+  margin: 0em !important;
+}
+
+.dataview-result-list-ul {
+  margin-block-start: 0.2em !important;
+  margin-block-end: 0.2em !important;
+}
+
+// Group styling
+.dataview.result-group {
+  padding-left: 8px;
+}
+
+// Alternate row colors
+.table-view-table > tbody > tr:nth-child(odd) {
+  background-color: var(--background-secondary);
+}
+
+// Responsive adjustments
+@include mobile {
+  .table-view-table {
+    font-size: 0.9em;
+
+    > thead > tr > th,
+    > tbody > tr > td {
+      padding: 0.3rem;
+    }
+  }
+}
+
+// Table sorting indicators
+.table-view-table > thead > tr > th {
+  position: relative;
+  cursor: pointer;
+
+  &.sort-asc::after {
+    content: "↑";
+    position: absolute;
+    right: 0.5rem;
+    color: var(--text-accent);
+  }
+
+  &.sort-desc::after {
+    content: "↓";
+    position: absolute;
+    right: 0.5rem;
+    color: var(--text-accent);
+  }
+}
+
+// Table cell content
+.table-view-table {
+  .cell-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cell-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
+
+// Table pagination
+.table-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9em;
+
+  button {
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    background-color: var(--background-secondary);
+
+    &:hover {
+      background-color: var(--background-secondary-alt);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

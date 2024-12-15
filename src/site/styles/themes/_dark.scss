@@ -1,0 +1,115 @@
+// Define dark theme colors and variables
+[data-theme="dark"] {
+  // Base colors
+  --background-primary: #1a1a1a;
+  --background-secondary: #252525;
+  --background-secondary-alt: #2d2d2d;
+
+  // Text colors
+  --text-normal: #dcddde;
+  --text-muted: #999999;
+  --text-accent: #7ba1e4;
+  --text-accent-hover: #8fb0eb;
+  --text-selection: rgba(123, 161, 228, 0.2);
+  --text-nav-selected: #ffffff;
+  --text-secondary: #999999;
+
+  // UI elements
+  --border-color: #333333;
+  --scrollbar-thumb: #666666;
+  --scrollbar-track: #2d2d2d;
+
+  // Headings
+  --h6-color: #dcddde;
+
+  // Graph colors
+  --graph-main: #7ba1e4;
+  --graph-muted: #999999;
+
+  // Interactive states
+  --hover-bg: #333333;
+  --active-bg: #404040;
+  --focus-ring: #7ba1e4;
+
+  // Callouts and notifications
+  --info-bg: rgba(23, 162, 184, 0.1);
+  --warn-bg: rgba(255, 193, 7, 0.1);
+  --error-bg: rgba(220, 53, 69, 0.1);
+  --success-bg: rgba(40, 167, 69, 0.1);
+
+  // Code blocks
+  --code-bg: #2d2d2d;
+  --code-text: #e0e0e0;
+  --inline-code-bg: #333333;
+  --inline-code-text: #e0e0e0;
+
+  // Tables
+  --table-header-bg: #2d2d2d;
+  --table-row-alt-bg: #252525;
+  --table-border: #333333;
+
+  // Search
+  --search-bg: #252525;
+  --search-highlight: rgba(123, 161, 228, 0.2);
+}
+
+// Dark theme specific overrides
+[data-theme="dark"] {
+  // Scrollbar styles
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+
+    &:hover {
+      background-color: var(--text-muted);
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+  }
+
+  // Code block specifics
+  pre, code {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+  }
+
+  // Table specifics
+  .table-view-table {
+    > thead > tr {
+      background-color: var(--table-header-bg);
+    }
+
+    > tbody > tr:nth-child(even) {
+      background-color: var(--table-row-alt-bg);
+    }
+  }
+
+  // Search component adjustments
+  .search-box {
+    background-color: var(--search-bg);
+
+    input {
+      color: var(--text-normal);
+
+      &::placeholder {
+        color: var(--text-muted);
+      }
+    }
+  }
+
+  // Links and interactive elements
+  a:not(.tag) {
+    color: var(--text-accent);
+
+    &:hover {
+      color: var(--text-accent-hover);
+    }
+  }
+
+  // Selection
+  ::selection {
+    background-color: var(--text-selection);
+    color: var(--text-normal);
+  }
+}

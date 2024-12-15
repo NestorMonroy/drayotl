@@ -1,0 +1,117 @@
+// Main content wrapper
+.content {
+  max-width: $content-max-width;
+  margin: auto;
+  margin-top: 90px;
+  position: relative;
+
+  @include mobile {
+    margin-top: 75px;
+  }
+}
+
+// Content sections
+.content-section {
+  margin-bottom: $base-spacing * 2;
+  padding: $base-spacing;
+  background-color: var(--background-primary);
+}
+
+// Content header
+.content-header {
+  margin-bottom: $base-spacing * 2;
+
+  h1 {
+    margin-bottom: $base-spacing;
+  }
+}
+
+// Content navigation
+.content-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: $base-spacing 0;
+  padding: $base-spacing 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+// Transcluded content
+.transclusion {
+  position: relative;
+  padding: $base-spacing;
+
+  .markdown-embed-link {
+    z-index: 99;
+    display: block;
+    width: auto !important;
+  }
+}
+
+// Task lists
+ul.task-list {
+  list-style: none;
+  padding-left: 15px;
+}
+
+// External links
+.external-link {
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent, transparent), url("/img/outgoing.svg");
+  background-size: 13px;
+  padding-right: 16px;
+  background-position-y: 4px;
+  cursor: pointer;
+}
+
+// Tables
+.table-wrapper {
+  overflow-x: auto;
+  margin: $base-spacing 0;
+}
+
+// Timestamps
+.timestamps {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8em;
+  color: var(--text-muted);
+  gap: 10px;
+  margin-top: 20px;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+  }
+}
+
+// Reference highlight
+.referred {
+  border: 1px dashed var(--text-accent);
+  padding: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+// Icon alignment
+.align-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// Responsive images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Mermaid diagrams
+.markdown-preview-view pre.mermaid {
+  background: white;
+  border-radius: 25px;
+  padding: 10px;
+}

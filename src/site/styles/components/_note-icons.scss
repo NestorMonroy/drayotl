@@ -1,0 +1,74 @@
+// Icon base styles for different contexts
+body {
+  &.title-note-icon .cm-s-obsidian > header > h1[data-note-icon]::before,
+  &.filetree-note-icon .filename[data-note-icon]::before,
+  &.links-note-icon .internal-link[data-note-icon]::before,
+  &.backlinks-note-icon .backlink[data-note-icon]::before {
+    content: " ";
+    display: inline-block;
+    width: 0.9em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: var(--note-icon-fallback);
+  }
+}
+
+// Specific icon variants
+body {
+  // Icon variant 1
+  &.title-note-icon .cm-s-obsidian > header > h1[data-note-icon="1"]::before,
+  &.filetree-note-icon .filename[data-note-icon="1"]::before,
+  &.links-note-icon .internal-link[data-note-icon="1"]::before,
+  &.backlinks-note-icon .backlink[data-note-icon="1"]::before {
+    background-image: var(--note-icon-1);
+  }
+
+  // Icon variant 2
+  &.title-note-icon .cm-s-obsidian > header > h1[data-note-icon="2"]::before,
+  &.filetree-note-icon .filename[data-note-icon="2"]::before,
+  &.links-note-icon .internal-link[data-note-icon="2"]::before,
+  &.backlinks-note-icon .backlink[data-note-icon="2"]::before {
+    background-image: var(--note-icon-2);
+  }
+
+  // Icon variant 3
+  &.title-note-icon .cm-s-obsidian > header > h1[data-note-icon="3"]::before,
+  &.filetree-note-icon .filename[data-note-icon="3"]::before,
+  &.links-note-icon .internal-link[data-note-icon="3"]::before,
+  &.backlinks-note-icon .backlink[data-note-icon="3"]::before {
+    background-image: var(--note-icon-3);
+  }
+}
+
+// Context classes for icon display
+.icon-context {
+  position: relative;
+  padding-left: 1.5em;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Icon size variations
+.icon-sm::before {
+  width: 0.8em;
+  height: 0.9em;
+}
+
+.icon-lg::before {
+  width: 1.1em;
+  height: 1.2em;
+}
+
+// Icon alignment utilities
+.align-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
